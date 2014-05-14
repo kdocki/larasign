@@ -79,3 +79,16 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| Register our tuba and clarinet players with the IoC container
+|--------------------------------------------------------------------------
+|
+| We could require a different file here or register ConcertServiceProvider
+| that boots up and registers new players. Both are perfectly valid options.
+|
+*/
+App::instance('tuba.player', new InstrumentPlayer('Fred', 'dancing tuba'));
+App::instance('clarinet.player', new InstrumentPlayer('Sally', 'quiet but quick clarinet'));
