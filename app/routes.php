@@ -13,13 +13,5 @@
 
 Route::get('/', function()
 {
-    $user = new User;
-    $cart = new Cart;
-    $lineitems = array();
-
-    $lineitems[] = new Lineitem('item 1337');
-    $lineitems[] = new Lineitem('item 231');
-    $lineitems[] = new Lineitem('item 432');
-
-     return $cart->checkout($user, $lineitems);
+	return View::make('hello');
 });
