@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$garden = new MarijuanaGarden;
+$garden = rand(0, 1) ? new MarijuanaGarden : new VegetableGarden;
 $plants = $garden->grow();
 
 foreach ($plants as $plant)
