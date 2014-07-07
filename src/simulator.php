@@ -1,11 +1,14 @@
 <?php
 
+// this simulator is our client, time to use our abstract factory
 require __DIR__ . '/../vendor/autoload.php';
 
-$garden = rand(0, 1) ? new MarijuanaGarden : new VegetableGarden;
-$plants = $garden->grow();
+// pick a random rating for this game
+$ratings = array('PG-13', 'R');
+$rating = $ratings[array_rand($ratings)];
 
-foreach ($plants as $plant)
-{
-	$plant->consume();
-}
+// create a new merchant
+$merchant = GardenNinja\Merchant::fromRating($rating);
+
+// each merchant makes money
+print "Your merchant made $" . $merchant->makeMoney() . PHP_EOL;
