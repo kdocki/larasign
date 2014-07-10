@@ -2,22 +2,11 @@
 
 class House
 {
-	private $layout;
-
-	public function getLayout()
-	{
-		return $this->layout;
-	}
-
-	public function setLayout($layout)
-	{
-		$this->layout = $layout;
-	}
+	public $layout;
 
 	public function __toString()
 	{
-		$str = '';
-		$rows = $this->layout;
+		$str = ''; $rows = $this->layout;
 
 		foreach ($rows as $row)
 		{
