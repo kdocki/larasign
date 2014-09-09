@@ -1,14 +1,14 @@
 <?php
 
-// this simulator is our client, time to use our abstract factory
 require __DIR__ . '/../vendor/autoload.php';
 
-// pick a random rating for this game
-$ratings = array('PG-13', 'R');
-$rating = $ratings[array_rand($ratings)];
+$ratings = array(
+	'PG-13' => new GardenNinja\RatedPG13\RiceFarmer,
+	'R' => new GardenNinja\RatedR\DrugDealer
+);
 
-// create a new merchant
-$merchant = GardenNinja\Merchant::fromRating($rating);
+$merchant = $ratings[array_rand($ratings)];
 
-// each merchant makes money
-print "Your merchant made $" . $merchant->makeMoney() . PHP_EOL;
+$client = new GardenNinja\Client($merchant);
+
+$client->run();
