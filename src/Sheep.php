@@ -2,10 +2,10 @@
 
 class Sheep
 {
-	public function __construct()
+	public function __construct(Lungs $lungs)
 	{
 		$this->name = "Big Momma";
-		$this->lungs = new Lungs;
+		$this->lungs = $lungs;
 	}
 
 	public function applyVirus()
