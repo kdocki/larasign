@@ -13,5 +13,9 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	$user = new UserPresenter(new User);
+
+	$user->favoriteColor = rand(0, 1) ? 'blue' : null;
+
+	return View::make('hello', compact('user'));
 });
