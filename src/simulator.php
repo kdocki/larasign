@@ -2,6 +2,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$patternFacade = new PatternFacade;
+$patternFacade = new PatternExecutor;
 
 $patternFacade->random();
