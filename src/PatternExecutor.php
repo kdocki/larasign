@@ -4,14 +4,8 @@ class PatternExecutor
 {
 	public function random($params = [])
 	{
-		$myClass = new ReflectionClass('PatternExecutor');
-
-		$methods = $myClass->getMethods(ReflectionMethod::IS_PUBLIC);
-		$methods = $this->pluck('name', $methods);
-		$methods = array_diff($methods, ['random']);
-
-		$random = array_rand($methods);
-		$method = $methods[$random];
+		$methods = ['abstractFactory', 'adapter', 'bridge', 'builder'];
+		$method = $methods[array_rand($methods)];
 
 		print PHP_EOL . strtoupper("$method pattern") . PHP_EOL;
 		print "======================================" . PHP_EOL;
@@ -67,14 +61,5 @@ class PatternExecutor
 		print $builder1->getHouse();
 		print PHP_EOL . '-- Expert Carpenter --' . PHP_EOL;
 		print $builder2->getHouse();
-	}
-
-	private function pluck($key, $data)
-	{
-		return array_reduce($data, function($result, $obj) use($key)
-		{
-	        isset($obj->$key) && $result[] = $obj->$key;
-	        return $result;
-	    }, array());
 	}
 }
