@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration {
 			$table->string('year', 4);
 			$table->string('vin');
 			$table->string('description');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
