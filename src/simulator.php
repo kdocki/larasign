@@ -16,22 +16,3 @@ $subject1->attach($observer2);
 $subject1->attach($observer3);
 
 $subject1->notify();
-
-print PHP_EOL;
-
-######################
-### Cheesy Example ###
-######################
-
-$taylor = new Person("Taylor");
-$dayle = new Person("Dayle");
-$jeffery = new Person("Jeffery");
-$machuga = new Hipster("Machuga");
-
-$taylor->nearBy($dayle, $jeffery, $machuga);
-$taylor->cuts('cheedar');
-$taylor->says('oops...');
-
-$taylor->noLongerNearBy($dayle, $jeffery, $machuga);
-$taylor->cuts('monterey jack');
-$taylor->says('This monterey jack cheese is all mine! muhahaha!');

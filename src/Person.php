@@ -8,6 +8,11 @@ class Person implements CheeseSmeller, CheeseCutter
 		$this->nearBy = new SplObjectStorage;
 	}
 
+	public function says($phrase)
+	{
+		print "{$this->name} says: \t\"" . $phrase . "\"" . PHP_EOL;
+	}
+
 	public function nearBy(CheeseSmeller $smeller)
 	{
 		$smellers = func_get_args();
@@ -28,11 +33,6 @@ class Person implements CheeseSmeller, CheeseCutter
 		}
 	}
 
-	public function smells(CheeseCutter $cutter, $cheese)
-	{
-		$this->says("i smell {$cheese}");
-	}
-
 	public function cuts($cheese)
 	{
 		print "--- {$this->name} cuts {$cheese} ---" . PHP_EOL;
@@ -43,8 +43,8 @@ class Person implements CheeseSmeller, CheeseCutter
 		}
 	}
 
-	public function says($phrase)
+	public function smells(CheeseCutter $cutter, $cheese)
 	{
-		print "{$this->name} says: \t\"" . $phrase . "\"" . PHP_EOL;
+		$this->says("i smell {$cheese}");
 	}
 }
