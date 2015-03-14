@@ -15,7 +15,7 @@ class CreateCarsTable extends Migration {
 		Schema::create('cars', function($table)
 		{
 			$table->increments('id');
-			$table->string('model');
+			$table->string('manufacturer');
 			$table->string('year', 4);
 			$table->string('vin');
 			$table->string('description');
