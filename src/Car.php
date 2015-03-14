@@ -6,9 +6,9 @@ class Car extends Eloquent
 
 	public static function find($id, $columns = array('*'))
 	{
-		$shouldProceed = static::triggerModelEvent('finding', $stop = false, $id);
+		$shouldProceed = static::triggerModelEvent('finding', true, $id);
 
-		if (!$shouldProceed) return;
+		if ($shouldProceed === false) return null;
 
 		$results = parent::find($id, $columns);
 
