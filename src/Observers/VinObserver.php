@@ -4,14 +4,11 @@ class VinObserver
 {
 	public function updating($model)
 	{
-		// if vin has not changed,
-		// then ignore the rest of this observer
-
 		$original = $model->getOriginal('vin');
 
 		if ($model->vin === $original)
 		{
-			return true;
+			return true;	// ignore unchanged vin
 		}
 
 		// check for the letter h in our vin
@@ -22,10 +19,7 @@ class VinObserver
 			print "model vin does not contain letter 'h', canceling update...\n";
 			return false;
 		}
-	}
 
-	public function saved($model)
-	{
-		print "model was saved to database\n";
+		print "model vin contains letter 'h', updating vin...\n";
 	}
 }

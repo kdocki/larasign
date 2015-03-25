@@ -1,6 +1,6 @@
 <?php namespace Observers;
 
-class PrinterObserver
+class ObserveEverything
 {
 	public function creating($model)
 	{

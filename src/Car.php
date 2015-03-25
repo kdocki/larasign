@@ -1,7 +1,13 @@
 <?php
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait as SoftDeletes;
+
 class Car extends Eloquent
 {
+	use SoftDeletes;
+
+	protected $dates = ['deleted_at'];
+
 	protected $observables = ['finding', 'found'];
 
 	public static function find($id, $columns = array('*'))
