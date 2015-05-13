@@ -17,7 +17,7 @@ require __DIR__ . '/../vendor/autoload.php';
 //            |                           | & set state to IdleState
 
 
-$machine = new Example1\VendingMachine(new Example1\IdleState);
+$machine = new Example1\VendingMachine;
 
 $machine->refund();					// deny!
 

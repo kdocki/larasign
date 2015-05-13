@@ -10,10 +10,10 @@ class VendingMachine
 		'Mountain Dew' 	=> ['amount' => 0, 'price' => 125],
 	];
 
-	public function __construct(VendingMachineState $initialState)
+	public function __construct()
 	{
 		$this->context = new VendingMachineContext($this->products);
-		$this->context->setState($initialState);
+		$this->context->setState(new IdleState);
 	}
 
 	public function insert($money)
