@@ -11,8 +11,8 @@ $chicken->speaks();		// cluck, cluck
 $chicken = new Chicken(new Noises\RoosterNoise);
 $chicken->speaks();		// cock-a-doodle-doo!!!
 
-$chicken = new Chicken(new Noises\RobotNoise);
-$chicken->speaks();		// baCAWK!
+$chicken = new Chicken(new Noises\RubberChickenNoise);
+$chicken->speaks();		// squeeek!
 
 $chicken = new Chicken(new Noises\Muted);
 $chicken->speaks();		//

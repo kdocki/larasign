@@ -23,7 +23,7 @@ class Chicken
 		{
 			case 'hen': 	return 'cluck, cluck';
 			case 'chick': 	return 'chirp, chirp';
-			case 'robot': 	return 'baCAWK!';
+			case 'rubber': 	return 'squeek!';
 			case 'muted': 	return '';
 			case 'rooster': return 'cock-a-doodle-doo!';
 		}
